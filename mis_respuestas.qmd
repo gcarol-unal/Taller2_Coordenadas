@@ -1,0 +1,111 @@
+---
+title: "Informe Técnico: Análisis Geoespacial"
+author: "gcaro"
+date: 2026-02-16
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+  pdf:
+    toc: true
+    toc-title: "Contenido"
+    number-sections: true
+    documentclass: scrreprt
+    geometry:
+      - top=25mm
+      - left=25mm
+      - right=25mm
+      - bottom=25mm
+---
+
+Taller 3
+
+# Pregunta 1
+
+Verifique las propiedades de GCS_Bogota y describa si está relacionado con ARENA, MAGNA-SIRGAS y si es geográfico o proyectado.
+
+## Respuesta: 
+
+| Propiedad | Valor |
+|-----------|-------|
+| Geographic Coordinate System | Bogota |
+| WKID | 4218 |
+| Authority | EPSG |
+| Angular Unit | Degree (0,0174532925199433) |
+| Prime Meridian | Greenwich (0,0) |
+| Datum | D Bogota |
+| Spheroid | International 1924 |
+| Semimajor Axis | 6378388,0 |
+| Semiminor Axis | 6356911,946127946 |
+| Inverse Flattening | 297,0 |
+
+A partir de los datos de las propiedades se logra identificar que el GCS_ Bogotá está en El Datum Bogotá el cual se basa en Arena y es un sistema de coordenadas geográfica "Esto significa que las posiciones definidas sobre Datum Bogotá aparecen desplazadas en una cantidad similar con respecto a las posiciones definidas sobre MAGNA-SIRGAS"
+
+
+# Pregunta 2
+
+Haga una tabla en un archivo Quarto (qmd)describiendo los principales sistemas de coordenadas relacionados con Colombia. No olvide poner una columna con el código EPSG
+## Respuesta
+
+| Tipo         | Nombre | Codigo|
+|-----------   |-----------|-----------|
+| Geográficas  | Bogota    | 4218      |
+|Proyectadas|Magna Sirgas Origen Nacional| 9377 |
+
+:Sistemas de coordenadas relacionados con Colombia {#tbl-1}
+
+# Pregunta 3
+
+Verifique las propiedades de “Colombia Bogota Zone” y describa si está relacionado con ARENA, MAGNA-SIRGAS y si es geográfico o proyectado. Si es proyectado a cuál de los 6 orígenes corresponde.
+
+
+## Respuesta
+
+| Propiedad | Valor |
+|-----------|-------|
+| Projected Coordinate System | Colombia Bogota Zone |
+| Projection | Transverse Mercator |
+| WKID | 21897 |
+| Previous WKID | 21892 |
+| Authority | EPSG |
+| Linear Unit | Meters (1,0) |
+| False Easting | 1000000,0 |
+| False Northing | 1000000,0 |
+| Central Meridian | -74,08091666666667 |
+| Scale Factor | 1,0 |
+| Latitude Of Origin | 4,599047222222222 |
+
+Son un sistema de coordenadas proyectadas y está relacionado con la proyección de  Mercator transversal.
+Los origenes se encuentran en Magna Sirgas. 
+
+
+# Pregunta 4
+
+Usando la herramienta “Project” re-proyecte municipios.shp (GCS_Bogota) a “Colombia Bogota Zone.prf”. Nombre el archivo de salida “municipios_planas” y guárdelo como stand alone feature class dentro de la File Geodatabase correspondiente.
+
+Explique si se requiere Geographic Transformation y describa el proceso que ejecuta la herramienta.
+
+## Respuesta
+
+| Propiedad | Valor |
+|-----------|-------|
+| Geographic Coordinate System | Bogota |
+| WKID | 4218 |
+| Authority | EPSG |
+| Angular Unit | Degree (0,0174532925199433) |
+| Prime Meridian | Greenwich (0,0) |
+| Datum | D Bogota |
+| Spheroid | International 1924 |
+| Semimajor Axis | 6378388,0 |
+| Semiminor Axis | 6356911,946127946 |
+| Inverse Flattening | 297,0 |
+
+En este caso **no se requiere Geographic Transformation**, ya que no se está cambiando el datum (ambos sistemas están basados en Datum Bogotá).  
+
+La herramienta **Project** realiza:
+
+1. Conversión de coordenadas geográficas (latitud/longitud).
+2. Aplicación de la proyección Transverse Mercator.
+3. Transformación matemática de coordenadas angulares a coordenadas planas (metros).
+4. Creación de un nuevo feature class con el sistema proyectado.

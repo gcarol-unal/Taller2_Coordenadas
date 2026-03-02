@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="gcaro">
+<meta name="dcterms.date" content="2027-04-02">
+
+<title>Informe Técnico: Análisis Geoespacial</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="mis_respuestas_files/libs/clipboard/clipboard.min.js"></script>
+<script src="mis_respuestas_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="mis_respuestas_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="mis_respuestas_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="mis_respuestas_files/libs/quarto-html/popper.min.js"></script>
+<script src="mis_respuestas_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="mis_respuestas_files/libs/quarto-html/anchor.min.js"></script>
+<link href="mis_respuestas_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="mis_respuestas_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="mis_respuestas_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="mis_respuestas_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="mis_respuestas_files/libs/bootstrap/bootstrap-4d7f0bce1131f3e5f9547cd857cfbfc8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1"><span class="header-section-number">1</span> Pregunta 1</a>
+  <ul class="collapse">
+  <li><a href="#rspuesta" id="toc-rspuesta" class="nav-link" data-scroll-target="#rspuesta"><span class="header-section-number">1.1</span> Rspuesta:</a></li>
+  </ul></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2"><span class="header-section-number">2</span> Pregunta 2</a></li>
+  <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3"><span class="header-section-number">3</span> Pregunta 3</a>
+  <ul class="collapse">
+  <li><a href="#respuesta" id="toc-respuesta" class="nav-link" data-scroll-target="#respuesta"><span class="header-section-number">3.1</span> Respuesta</a></li>
+  </ul></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4"><span class="header-section-number">4</span> Pregunta 4</a>
+  <ul class="collapse">
+  <li><a href="#respuesta-1" id="toc-respuesta-1" class="nav-link" data-scroll-target="#respuesta-1"><span class="header-section-number">4.1</span> Respuesta</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="mis_respuestas.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Informe Técnico: Análisis Geoespacial</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gcaro </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 2, 2027</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Taller 3</p>
+<section id="pregunta-1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pregunta 1</h1>
+<p>Verifique las propiedades de GCS_Bogota y describa si está relacionado con ARENA, MAGNA-SIRGAS y si es geográfico o proyectado.</p>
+<section id="rspuesta" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="rspuesta"><span class="header-section-number">1.1</span> Rspuesta:</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geographic Coordinate System</td>
+<td>Bogota</td>
+</tr>
+<tr class="even">
+<td>WKID</td>
+<td>4218</td>
+</tr>
+<tr class="odd">
+<td>Authority</td>
+<td>EPSG</td>
+</tr>
+<tr class="even">
+<td>Angular Unit</td>
+<td>Degree (0,0174532925199433)</td>
+</tr>
+<tr class="odd">
+<td>Prime Meridian</td>
+<td>Greenwich (0,0)</td>
+</tr>
+<tr class="even">
+<td>Datum</td>
+<td>D Bogota</td>
+</tr>
+<tr class="odd">
+<td>Spheroid</td>
+<td>International 1924</td>
+</tr>
+<tr class="even">
+<td>Semimajor Axis</td>
+<td>6378388,0</td>
+</tr>
+<tr class="odd">
+<td>Semiminor Axis</td>
+<td>6356911,946127946</td>
+</tr>
+<tr class="even">
+<td>Inverse Flattening</td>
+<td>297,0</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de los datos de las propiedades se logra identificar que el GCS_ Bogotá está en El Datum Bogotá el cual se basa en Arena y es un sistema de coordenadas geográfica “Esto significa que las posiciones definidas sobre Datum Bogotá aparecen desplazadas en una cantidad similar con respecto a las posiciones definidas sobre MAGNA-SIRGAS”</p>
+</section>
+</section>
+<section id="pregunta-2" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Pregunta 2</h1>
+<p>Haga una tabla en un archivo Quarto (qmd)describiendo los principales sistemas de coordenadas relacionados con Colombia. No olvide poner una columna con el código EPSG ## Respuesta</p>
+<div id="tbl-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Sistemas de coordenadas relacionados con Colombia
+</figcaption>
+<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Nombre</th>
+<th>Codigo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geográficas</td>
+<td>Bogota</td>
+<td>4218</td>
+</tr>
+<tr class="even">
+<td>Proyectadas</td>
+<td>Magna Sirgas Origen Nacional</td>
+<td>9377</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="pregunta-3" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Pregunta 3</h1>
+<p>Verifique las propiedades de “Colombia Bogota Zone” y describa si está relacionado con ARENA, MAGNA-SIRGAS y si es geográfico o proyectado. Si es proyectado a cuál de los 6 orígenes corresponde.</p>
+<section id="respuesta" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="respuesta"><span class="header-section-number">3.1</span> Respuesta</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Projected Coordinate System</td>
+<td>Colombia Bogota Zone</td>
+</tr>
+<tr class="even">
+<td>Projection</td>
+<td>Transverse Mercator</td>
+</tr>
+<tr class="odd">
+<td>WKID</td>
+<td>21897</td>
+</tr>
+<tr class="even">
+<td>Previous WKID</td>
+<td>21892</td>
+</tr>
+<tr class="odd">
+<td>Authority</td>
+<td>EPSG</td>
+</tr>
+<tr class="even">
+<td>Linear Unit</td>
+<td>Meters (1,0)</td>
+</tr>
+<tr class="odd">
+<td>False Easting</td>
+<td>1000000,0</td>
+</tr>
+<tr class="even">
+<td>False Northing</td>
+<td>1000000,0</td>
+</tr>
+<tr class="odd">
+<td>Central Meridian</td>
+<td>-74,08091666666667</td>
+</tr>
+<tr class="even">
+<td>Scale Factor</td>
+<td>1,0</td>
+</tr>
+<tr class="odd">
+<td>Latitude Of Origin</td>
+<td>4,599047222222222</td>
+</tr>
+</tbody>
+</table>
+<p>Son un sistema de coordenadas proyectadas y está relacionado con la proyección de Mercator transversal. Los origenes se encuentran en Magna Sirgas.</p>
+<p>oyecte municipios.shp (GCS_Bogota) a “Colombia Bogota Zone.prf”. Nombre el archivo de salida “municipios_planas” y guárdelo como stand alone feature class (no dentro de un dataset) dentro de la File Geodatabase correspondiente a su proyecto. Cuando se transforma un sistema de coordenadas sin cambiar de datum, no requiere definir los parámetros de “Geographic Transformation”. Explique si este es nuestro caso en esta transformación. Describa el proceso que ejecuta la herramienta. Verifique las propiedades del feature class resultante y explique porque en las propiedades del sistema de coordenadas menciona información correspondiente a coordenadas geográficas y coordenadas planas.</p>
+<p>|Geographic Coordinate System Bogota| |WKID 4218| |Authority EPSG| |Angular Unit Degree (0,0174532925199433)| |Prime Meridian Greenwich (0,0)| |Datum D Bogota| |Spheroid International 1924| |Semimajor Axis 6378388,0| |Semiminor Axis 6356911,946127946| |Inverse Flattening 297,0|</p>
+</section>
+</section>
+<section id="pregunta-4" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Pregunta 4</h1>
+<p>Usando la herramienta “Project” re-proyecte municipios.shp (GCS_Bogota) a “Colombia Bogota Zone.prf”. Nombre el archivo de salida “municipios_planas” y guárdelo como stand alone feature class dentro de la File Geodatabase correspondiente.</p>
+<p>Explique si se requiere Geographic Transformation y describa el proceso que ejecuta la herramienta.</p>
+<section id="respuesta-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="respuesta-1"><span class="header-section-number">4.1</span> Respuesta</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geographic Coordinate System</td>
+<td>Bogota</td>
+</tr>
+<tr class="even">
+<td>WKID</td>
+<td>4218</td>
+</tr>
+<tr class="odd">
+<td>Authority</td>
+<td>EPSG</td>
+</tr>
+<tr class="even">
+<td>Angular Unit</td>
+<td>Degree (0,0174532925199433)</td>
+</tr>
+<tr class="odd">
+<td>Prime Meridian</td>
+<td>Greenwich (0,0)</td>
+</tr>
+<tr class="even">
+<td>Datum</td>
+<td>D Bogota</td>
+</tr>
+<tr class="odd">
+<td>Spheroid</td>
+<td>International 1924</td>
+</tr>
+<tr class="even">
+<td>Semimajor Axis</td>
+<td>6378388,0</td>
+</tr>
+<tr class="odd">
+<td>Semiminor Axis</td>
+<td>6356911,946127946</td>
+</tr>
+<tr class="even">
+<td>Inverse Flattening</td>
+<td>297,0</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso <strong>no se requiere Geographic Transformation</strong>, ya que no se está cambiando el datum (ambos sistemas están basados en Datum Bogotá).</p>
+<p>La herramienta <strong>Project</strong> realiza:</p>
+<ol type="1">
+<li>Conversión de coordenadas geográficas (latitud/longitud).</li>
+<li>Aplicación de la proyección Transverse Mercator.</li>
+<li>Transformación matemática de coordenadas angulares a coordenadas planas (metros).</li>
+<li>Creación de un nuevo feature class con el sistema proyectado.</li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
